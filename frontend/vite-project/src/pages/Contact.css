@@ -1,0 +1,104 @@
+/* Main container for the Contact Us page */
+.contact-container {
+    padding: 50px 15px;
+    min-height: 80vh;
+    background-color: #f0f4f8;  /* Light background for contrast */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Contact button */
+.contact-button {
+    background-color: #00C6FF;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.contact-button:hover {
+    background-color: #0094cc;
+}
+
+/* Popup form container */
+.contact-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    outline: 3px solid #00C6FF; /* Outline changed to blue */
+    width: 400px;
+    max-width: 90%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translate(-50%, -40%);
+}
+
+/* When the popup is active */
+.contact-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0%);
+}
+
+/* Form field styles */
+.form-control {
+    font-size: 1.2rem; /* Increase font size for better readability */
+    padding: 12px 15px; /* Add padding for more space */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Increase space between fields */
+    font-family: 'Arial', sans-serif; /* Change font to a more readable one */
+}
+
+/* Styling for the submit button inside the popup */
+.submit-button {
+    background-color: #00C6FF; /* Use the same blue color */
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0094cc;
+}
+
+/* Close button */
+.close-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.close-button:hover {
+    background-color: #ddd;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1b1b1b;
+    color: #ddd;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}

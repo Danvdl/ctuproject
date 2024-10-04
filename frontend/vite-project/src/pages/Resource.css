@@ -1,0 +1,87 @@
+/* Ensure the body and html elements take up full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f9f9f9;  /* Light background color for contrast */
+}
+
+/* Main container for the resource page */
+.resource-container {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Styling for the main headings */
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;  /* Darker color for headings */
+}
+
+/* Subheadings for Upload and Download sections */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #00C6FF;  /* Consistent brand color */
+    margin-bottom: 30px;
+}
+
+/* Styling for intro text */
+.intro-text {
+    font-size: 1.2rem;
+    color: #555;  /* Subtle text color */
+    max-width: 800px;
+    margin: 0 auto;  /* Center the text */
+}
+
+/* Center and style the form */
+.upload-section, .download-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling for consistency */
+button {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    background-color: #00C6FF;  /* Brand color */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0094cc;  /* Darken the button on hover */
+}
+
+/* Styling for file list */
+.file-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.file-list li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    color: #333;  /* Text color for download links */
+}
+
+/* Footer stays at the bottom */
+footer {
+    background-color: #1b1b1b;
+    color: #ddd;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
