@@ -1,20 +1,21 @@
-import React from 'react';
+
 import { Navbar, Nav } from 'react-bootstrap';
+import './Navbar.css';  // Import the custom CSS for the navbar
 
 const Navigation = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Navbar.Brand href="/">CTU Buddy</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/timetable">Timetable</Nav.Link>
-          <Nav.Link href="/discussion">Discussion</Nav.Link>
-          <Nav.Link href="/share">Share</Nav.Link>
-          <Nav.Link href="/resources">Resources</Nav.Link>
-          <Nav.Link href="/about">About Us</Nav.Link>
-          <Nav.Link href="/contact">Contact Us</Nav.Link>
+        <Nav className="ms-auto">
+          <Nav.Link href="/" className="me-3">Home</Nav.Link>
+          <Nav.Link href="/timetable" className="me-3">Timetable</Nav.Link>
+          <Nav.Link href="/discussion" className="me-3">Discussion</Nav.Link>
+          <Nav.Link href="/share" className="me-3">Share</Nav.Link>
+          <Nav.Link href="/resources" className="me-3">Resources</Nav.Link>
+          <Nav.Link href="/about" className="me-3">About Us</Nav.Link>
+          <Nav.Link href="/contact" className="me-3">Contact Us</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

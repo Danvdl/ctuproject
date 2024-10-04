@@ -1,33 +1,20 @@
 
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import Navigation from '../components/Navbar';
+import Footer from '../components/Footer'; 
+import './Home.css';  // Custom CSS for the homepage
 
 const Home = () => {
   return (
-    <Container className="my-5">
-      <Row>
-        <Col className="text-center">
-          <h1>Welcome to CTU-Buddy</h1>
-          <h3>Your Interactive Education Platform</h3>
-          <p>
-            Learning at CTU college is not just about books; it&apos;s about making education fun, interactive, and engaging.
-            CTU-Buddy is designed to help students manage their schedules, share resources, engage in discussions, and connect with others.
-          </p>
-        </Col>
-      </Row>
-
-      <Row className="text-center mt-5">
-        <Col>
-          <Button variant="primary" size="lg" href="/about">
-            Learn More About Us
-          </Button>
-        </Col>
-        <Col>
-          <Button variant="secondary" size="lg" href="/Discussion">
-            Join the Discussion
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+    <div className="home-page-container">
+      <Navigation /> {/* Include the Navigation */}
+      <div className="indent-wrapper-homepage">
+        <div className="text-center">
+          <h1>CTU-Buddy</h1>
+          <h2>Learning at CTU college is <span style={{ color: '#00C6FF' }}>Fun</span></h2>
+        </div>
+      </div>
+      <Footer /> {/* Add the Footer */}
+    </div>
   );
 };
 

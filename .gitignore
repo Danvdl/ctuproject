@@ -1,0 +1,74 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# Static build output
+out/
+output/
+
+# Vite cache
+.vite
+
+# Testing files
+coverage/
+*.lcov
+
+# IDE / Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Ignore all generated lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore compiled files from TypeScript or Babel
+*.tsbuildinfo
+*.d.ts
+*.js.map
+*.jsx.map
+
+# Ignore ESLint cache
+.eslintcache
+
+# Ignore Prettier output
+.prettierignore
+.prettier
+prettier.config.js
+.prettierrc.js
+
+# Ignore JetBrains IDE artifacts
+.idea/
+
+# Ignore Docker and other temporary files
+docker-compose.override.yml
+.Dockerfile
+
