@@ -1,28 +1,31 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Updated import
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import Home from './pages/Home'; 
+import About from './pages/About'; 
+import Contact from './pages/Contact'; 
+import Discussion from './pages/Discussion'; 
+import Timetable from './pages/Timetable'; 
+import Resource from './pages/Resource'; 
+import './App.css'; 
+import client from './apollo-client'; // Import the Apollo Client
+import { ApolloProvider } from '@apollo/client'; // Import ApolloProvider
 
-import Home from './pages/Home'; // Import your Home component
-import About from './pages/About'; // Import your About component
-import Contact from './pages/Contact'; // Import your Contact component
-import './App.css'; // Import your custom CSS
-import Discussion from './pages/Discussion'; // Import your Discussion component
-import Timetable from './pages/Timetable'; // Import your Timetable component
-import Resource from './pages/Resource'; // Import your Resource component
 function App() {
   return (
-    <Router>
-      <Routes> {/* Replaced Switch with Routes */}
-        <Route path="/" element={<Home />} /> {/* Use element instead of component */}
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> {/* Corrected import path */}
-        <Route path="*" element={<h1>Page Not Found</h1>} /> {/* Added a 404 page */}
-        <Route path="/home" element={<Home />} /> {/* Added a redirect */}
-        <Route path="/discussion" element={<Discussion/>} /> {/* Added a placeholder */}
-        <Route path="/timetable" element={<Timetable/>} /> {/* Added a placeholder */}
-        <Route path="/resources" element={<Resource/>} /> {/* Added a placeholder */}
-      </Routes>
-    </Router>
+    <ApolloProvider client={client}> {/* Wrap the entire app with ApolloProvider */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<h1>Page Not Found</h1>} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/discussion" element={<Discussion />} />
+          <Route path="/timetable" element={<Timetable />} />
+          <Route path="/resources" element={<Resource />} />
+        </Routes>
+      </Router>
+    </ApolloProvider>
   );
 }
 
 export default App;
-

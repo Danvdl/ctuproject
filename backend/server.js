@@ -1,24 +1,27 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const discussionsRoute = require('./routes/discussions');
-const repliesRoute = require('./routes/replies');
-const subscriptionsRoute = require('./routes/subscriptions');
-const resourcesRoute = require('./routes/resources');
+const { ApolloServer } = require('apollo-server-express');
+const typeDefs = require('./graphql/schema');  // Schema definitions
+const resolvers = require('./graphql/resolvers');  // Resolvers
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+async function startApolloServer() {
+  const app = express();
+  const cors = require('cors');
 
-app.use(bodyParser.json());
+  app.use(cors());  // Enable CORS
 
-// Routes
-app.use('/api/discussions', discussionsRoute);
-app.use('/api/replies', repliesRoute);
-app.use('/api/subscriptions', subscriptionsRoute);
-app.use('/api/resources', resourcesRoute);
+  const server = new ApolloServer({
+    typeDefs,  // Schema definitions
+    resolvers  // Resolvers for queries and mutations
+  });
 
-// Static folder for file uploads
-app.use('/uploads', express.static('uploads'));
+  await server.start();
+  server.applyMiddleware({ app });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  app.listen({ port: 5000 }, () =>
+    console.log(`Server ready at http://localhost:5000${server.graphqlPath}`)
+  );
+}
+
+startApolloServer().catch((error) => {
+  console.error('Error starting server:', error);
 });
